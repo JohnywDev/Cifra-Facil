@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Ensina o Tailwind v4 a usar o modificador html-light quando a tag html tiver a classe .light */
+@variant html-light (html.light &);
+
+/* Configuração base para o tema Escuro (padrão do sistema) */
+html, body, #root {
+  background-color: #020617; /* Slate 950 */
+  color: #f8fafc; /* Slate 50 */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Força a troca de fundo global quando o modo claro estiver ativo */
+html.light, html.light body, html.light #root {
+  background-color: #f8fafc; /* Slate 50 */
+  color: #0f172a; /* Slate 900 */
+}
+
+/* Customização das barras de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b; 
+  border-radius: 9999px;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+}
